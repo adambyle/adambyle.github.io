@@ -283,6 +283,8 @@ p {
 
 .org {
     margin-top: 36px;
+    border-radius: 6px;
+    scroll-margin-top: 32px;
 }
 
 .org-title {
@@ -311,8 +313,9 @@ p {
     padding-top: 28px;
 }
 
-/* Gently highlight an entry reached through a jump link */
-.entry:target {
+/* Gently highlight an entry or group reached through a jump link */
+.entry:target,
+.org:target {
     animation: arrive 2.4s ease-out;
 }
 
