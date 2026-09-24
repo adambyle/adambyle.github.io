@@ -1,0 +1,46 @@
+#!/bin/sh
+# Cache-busting: stamp every local CSS/JS reference in the HTML pages with a
+# fingerprint of that file, e.g. href="style.css?v=3f9a1c2". The fingerprint
+# only changes when the file does, so browsers re-download exactly when needed.
+#
+# Works on the staged (index) versions, so unstaged edits are left alone.
+# Enable once per clone with:  git config core.hooksPath .githooks
+
+set -e
+
+assets=$(git ls-files -- '*.css' '*.js')
+pages=$(git ls-files -- '*.html')
+[ -z "$assets" ] || [ -z "$pages" ] && exit 0
+
+for page in $pages; do
+    # Skip pages that are deleted in the index.
+    entry=$(git ls-files -s -- "$page")
+    [ -n "$entry" ] || continue
+    mode=$(echo "$entry" | cut -d' ' -f1)
+
+    staged=$(git show ":$page")
+    stamped="$staged"
+
+    for asset in $assets; do
+        hash=$(git rev-parse --short=7 ":$asset" 2>/dev/null) || continue
+        # Escape regex metacharacters in the path (dots, mainly).
+        pattern=$(printf '%s' "$asset" | sed 's/[.[\*^$/]/\\&/g')
+        # Matches ="style.css", ="/style.css", ="../style.css", with or
+        # without an existing ?v=... stamp.
+        expr="s/(=\"(\\/|(\\.\\.\\/)*)${pattern})(\\?v=[^\"]*)?\"/\\1?v=${hash}\"/g"
+        stamped=$(printf '%s\n' "$stamped" | sed -E "$expr")
+    done
+
+    if [ "$stamped" != "$staged" ]; then
+        blob=$(printf '%s\n' "$stamped" | git hash-object -w --stdin)
+        git update-index --cacheinfo "$mode,$blob,$page"
+        # Mirror the stamps into the working tree so it doesn't look modified.
+        for asset in $assets; do
+            hash=$(git rev-parse --short=7 ":$asset" 2>/dev/null) || continue
+            pattern=$(printf '%s' "$asset" | sed 's/[.[\*^$/]/\\&/g')
+            expr="s/(=\"(\\/|(\\.\\.\\/)*)${pattern})(\\?v=[^\"]*)?\"/\\1?v=${hash}\"/g"
+            sed -E -i "$expr" "$page"
+        done
+        echo "pre-commit: stamped asset versions in $page"
+    fi
+done
