@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta
@@ -7,15 +7,494 @@
             content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
         />
         <title>Adam Byle</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,100;1,9..144,400..700,100&display=swap"
+        />
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
 
     <body>
-        <h1>Hi, I'm Adam.</h1>
-        <p>
-            I'm a computer science student at Calvin University. I like to make
-            things.
-        </p>
-        <p>This site is under construction. Please check back later.</p>
+        <main class="page">
+            <!-- Introduction -->
+            <header class="intro">
+                <img
+                    class="intro-photo"
+                    src="assets/images/profile.jpg"
+                    alt="Adam Byle"
+                    width="460"
+                    height="460"
+                />
+                <div class="intro-text">
+                    <h1 class="intro-greeting">Hey, I’m Adam!</h1>
+                    <p class="intro-lead">
+                        I’m a <span class="mark">software developer</span>,
+                        <span class="mark">musician</span>, and
+                        <span class="mark">writer</span> based in Grand Rapids,
+                        Michigan.
+                    </p>
+                    <p class="intro-body">
+                        I’m passionate about so many things and care about first
+                        impressions—for that reason I’ve written all the text on
+                        this website myself. (<a href="/article/ai">Why?</a>)
+                    </p>
+                    <p class="intro-body intro-closing">
+                        I hope by looking around you can get to know more about
+                        the things I care about and do.
+                    </p>
+                </div>
+            </header>
+
+            <!-- Interests -->
+            <nav class="interests" aria-label="Interests">
+                <a class="interest" href="/programming">
+                    <div class="interest-head">
+                        <span class="interest-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                        </span>
+                        <h2 class="interest-title">Programming</h2>
+                    </div>
+                    <p>
+                        I have three years of professional experience in
+                        software development and a decade more of personal
+                        interest in coding.
+                    </p>
+                    <div class="interest-foot">
+                        <img
+                            class="interest-photo"
+                            src="assets/images/hackathon.jpg"
+                            alt="Adam and a friend at a hackathon"
+                            width="360"
+                            height="360"
+                            loading="lazy"
+                        />
+                        <span class="interest-arrow" aria-hidden="true"></span>
+                    </div>
+                </a>
+                <a class="interest" href="/music">
+                    <div class="interest-head">
+                        <span class="interest-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 18V5l12-2v13" />
+                                <circle cx="6" cy="18" r="3" />
+                                <circle cx="18" cy="16" r="3" />
+                            </svg>
+                        </span>
+                        <h2 class="interest-title">Music</h2>
+                    </div>
+                    <p>
+                        I’m a composer of chamber and concert band music and a
+                        pianist and percussionist. My compositions have won
+                        awards and been performed on tour with a university
+                        orchestra.
+                    </p>
+                    <div class="interest-foot">
+                        <img
+                            class="interest-photo"
+                            src="assets/images/piano.jpg"
+                            alt="Adam playing a grand piano"
+                            width="360"
+                            height="360"
+                            loading="lazy"
+                        />
+                        <span class="interest-arrow" aria-hidden="true"></span>
+                    </div>
+                </a>
+                <a class="interest" href="/writing">
+                    <div class="interest-head">
+                        <span class="interest-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 20h9" />
+                                <path
+                                    d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                                />
+                            </svg>
+                        </span>
+                        <h2 class="interest-title">Writing</h2>
+                    </div>
+                    <p>
+                        I’m an avid journaler and thoughts dumper. I’ve also
+                        dabbled in fiction writing.
+                    </p>
+                    <div class="interest-foot">
+                        <img
+                            class="interest-photo"
+                            src="assets/images/book.jpg"
+                            alt="Adam holding a book he wrote"
+                            width="360"
+                            height="360"
+                            loading="lazy"
+                        />
+                        <span class="interest-arrow" aria-hidden="true"></span>
+                    </div>
+                </a>
+            </nav>
+
+            <!-- Education -->
+            <section class="section" id="education">
+                <h2 class="section-title">Education</h2>
+
+                <article class="entry">
+                    <div class="entry-meta">
+                        <span class="entry-label">High school</span>
+                        <span class="entry-date">2023</span>
+                    </div>
+                    <div class="entry-body">
+                        <h3 class="entry-title">Veritas Academy</h3>
+                        <p>
+                            I graduated Veritas Academy, a small private
+                            university-style school, in 2023, among a class of
+                            fifty.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-meta">
+                        <span class="entry-label">College</span>
+                        <span class="entry-date">2027</span>
+                        <span class="entry-date">Bachelor of Computer Science</span>
+                    </div>
+                    <div class="entry-body">
+                        <h3 class="entry-title">Calvin University</h3>
+                        <p>
+                            I will graduate from Calvin University in 2027 with
+                            a bachelor’s degree in computer science. At Calvin,
+                            I have been deeply involved in the computer
+                            science, engineering, and music departments in
+                            professional and creative projects.
+                        </p>
+
+                        <!-- Keep in sync with every Calvin involvement on the page. -->
+                        <div class="involvements">
+                            <p class="involvements-label">
+                                See what I’m involved in:
+                            </p>
+                            <ul class="jump-links">
+                                <li>
+                                    <a href="#calvin-grader"
+                                        >CS department student grader</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="#calvin-tutor"
+                                        >CS department peer tutor</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="#calvin-research"
+                                        >Research assistant</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Professional -->
+            <section class="section" id="professional">
+                <h2 class="section-title">Professional</h2>
+
+                <div class="org">
+                    <h3 class="org-title">Walter P. Moore</h3>
+
+                    <article class="entry" id="walter-p-moore">
+                        <div class="entry-meta">
+                            <ul class="terms">
+                                <li>Summer 2023</li>
+                                <li>Summer 2024</li>
+                                <li>Summer 2025</li>
+                                <li>Fall 2025</li>
+                                <li>Spring 2026</li>
+                                <li class="current">Fall 2026 (current)</li>
+                            </ul>
+                        </div>
+                        <div class="entry-body">
+                            <h4 class="entry-title">
+                                Software developer intern
+                            </h4>
+                            <ul class="points">
+                                <li>
+                                    I work with .NET to build and maintain a
+                                    web server and database for storing and
+                                    retrieving standardized structural models
+                                    from cloud storage and performing
+                                    operations on those models.
+                                </li>
+                                <li>
+                                    I’ve developed a separate web app from the
+                                    ground up for performing scheduled
+                                    background tasks on these models.
+                                </li>
+                                <li>
+                                    Through my work I’ve been exposed to
+                                    database management systems and ORMs
+                                    through Microsoft SQL Server and Entity
+                                    Framework, cloud computing technologies
+                                    through Microsoft Azure, and the
+                                    containerization tool Docker.
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="org">
+                    <h3 class="org-title">Calvin University</h3>
+
+                    <article class="entry" id="calvin-grader">
+                        <div class="entry-meta">
+                            <ul class="terms">
+                                <li>Spring 2024</li>
+                                <li>Fall 2024</li>
+                                <li>Spring 2025</li>
+                                <li>Fall 2025</li>
+                                <li>Spring 2026</li>
+                                <li class="current">Fall 2026 (current)</li>
+                            </ul>
+                        </div>
+                        <div class="entry-body">
+                            <h4 class="entry-title">
+                                CS department student grader
+                            </h4>
+                            <ul class="points">
+                                <li>
+                                    I graded Introduction to Data Structures (CS
+                                    112) with special attention to catching
+                                    code plagiarization and unpermitted AI
+                                    usage.
+                                </li>
+                                <li>
+                                    I was nominated student employee of the year
+                                    by Prof. Victor Norman for exceptional work
+                                    in grading.
+                                </li>
+                                <li>
+                                    I developed a web app to streamline working
+                                    with Moodle grading worksheets.
+                                    <span class="links">
+                                        <a
+                                            class="link-github"
+                                            href="https://github.com/adambyle/grader"
+                                            >adambyle/grader</a
+                                        >
+                                        <a class="link-site" href="/grader"
+                                            >adambyle.net/grader</a
+                                        >
+                                    </span>
+                                </li>
+                                <li>
+                                    I am currently working on a department-wide
+                                    replacement for GitHub Classroom.
+                                    <span class="links">
+                                        <a
+                                            class="link-github"
+                                            href="https://github.com/adambyle/github-cs-grader"
+                                            >adambyle/github-cs-grader</a
+                                        >
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="entry" id="calvin-tutor">
+                        <div class="entry-meta">
+                            <ul class="terms">
+                                <li>Fall 2024</li>
+                                <li>Spring 2025</li>
+                            </ul>
+                        </div>
+                        <div class="entry-body">
+                            <h4 class="entry-title">
+                                CS department peer tutor
+                            </h4>
+                            <ul class="points">
+                                <li>
+                                    I worked one-on-one with students in
+                                    individual tutoring appointments as well as
+                                    in group-based study sessions.
+                                </li>
+                                <li>
+                                    Some of the students I tutored recognized me
+                                    for exceptional encouragement and leadership
+                                    in tutoring.
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="entry" id="calvin-research">
+                        <div class="entry-meta">
+                            <ul class="terms">
+                                <li>Summer 2026</li>
+                            </ul>
+                        </div>
+                        <div class="entry-body">
+                            <h4 class="entry-title">Research assistant</h4>
+                            <ul class="points">
+                                <li>
+                                    I improved and maintained a data
+                                    visualization web app for global
+                                    energy-conversion chains.
+                                    <span class="links">
+                                        <a
+                                            class="link-github"
+                                            href="https://github.com/Energy-Visualizer/mexer"
+                                            >Energy-Visualizer/mexer</a
+                                        >
+                                        <a
+                                            class="link-site"
+                                            href="https://mexer.site"
+                                            >mexer.site</a
+                                        >
+                                    </span>
+                                </li>
+                                <li>
+                                    I worked with Django and HTMX in Python,
+                                    PostgreSQL, and Docker.
+                                </li>
+                                <li>
+                                    I coordinated with and presented
+                                    improvements to researchers at the
+                                    University of Leeds and Instituto Superior
+                                    Técnico to meet user needs.
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Personal -->
+            <section class="section" id="personal">
+                <h2 class="section-title">Personal</h2>
+
+                <div class="org">
+                    <h3 class="org-title">Hackathon participation</h3>
+
+                    <article class="entry">
+                        <div class="entry-meta">
+                            <ul class="terms">
+                                <li>Fall 2023</li>
+                                <li>Fall 2024</li>
+                            </ul>
+                        </div>
+                        <div class="entry-body">
+                            <p>
+                                I participated in and won two university
+                                department programming competitions, where
+                                teams or individuals worked to solve as many
+                                programming challenges in a few hours.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="entry">
+                        <div class="entry-meta">
+                            <ul class="terms">
+                                <li>Fall 2024</li>
+                            </ul>
+                        </div>
+                        <div class="entry-body">
+                            <h4 class="entry-title">Hack the Lab</h4>
+                            <p>
+                                I participated in Hack the Lab at Michigan Labs
+                                and won (by over a factor of 10 points versus
+                                second place!) with my good friend Nick Roberts.
+                                The competition was won without the use of AI.
+                            </p>
+                            <span class="links">
+                                <a
+                                    class="link-github"
+                                    href="https://github.com/adambyle/hackthelab2024"
+                                    >adambyle/hackthelab2024</a
+                                >
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="entry">
+                        <div class="entry-meta">
+                            <ul class="terms">
+                                <li>Spring 2026</li>
+                            </ul>
+                        </div>
+                        <div class="entry-body">
+                            <h4 class="entry-title">Atomic Games</h4>
+                            <p>I participated in Atomic Games at Atomic Object.</p>
+                            <span class="links">
+                                <a
+                                    class="link-github"
+                                    href="https://github.com/adambyle/atomic2026"
+                                    >adambyle/atomic2026</a
+                                >
+                            </span>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="org">
+                    <h3 class="org-title">Personal programming projects</h3>
+
+                    <ul class="projects">
+                        <li class="project">
+                            <p>
+                                A private website for me and my friends to
+                                browse my private journal of over 400,000 words.
+                            </p>
+                            <span class="links">
+                                <a
+                                    class="link-github"
+                                    href="https://github.com/adambyle/edat"
+                                    >adambyle/edat</a
+                                >
+                            </span>
+                        </li>
+                        <li class="project">
+                            <p>A small virtual machine project in Rust.</p>
+                            <span class="links">
+                                <a
+                                    class="link-github"
+                                    href="https://github.com/adambyle/alphabet"
+                                    >adambyle/alphabet</a
+                                >
+                            </span>
+                        </li>
+                        <li class="project">
+                            <p>
+                                <em>Ultima</em>, a 4-player Minecraft PvP map
+                                with over 8,000 downloads.
+                            </p>
+                            <span class="links">
+                                <a
+                                    class="link-github"
+                                    href="https://github.com/adambyle/ultima"
+                                    >adambyle/ultima</a
+                                >
+                                <a
+                                    class="link-site"
+                                    href="https://www.minecraftmaps.com/47320-ultima-pvp"
+                                    >minecraftmaps.com</a
+                                >
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Music and writing: reserved for future content. -->
+            <!--
+            <section class="section" id="music-and-writing">
+                <h2 class="section-title">Music and writing</h2>
+            </section>
+            -->
+        </main>
     </body>
 </html>
