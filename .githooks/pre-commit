@@ -8,6 +8,24 @@
 
 set -e
 
+# Build article pages from articles/*.md (staged versions) and stage them, so
+# they get the asset stamps below too.
+if [ -f scripts/build_articles.py ]; then
+    python=""
+    for candidate in python3 python; do
+        if "$candidate" -c 'import sys; sys.exit(sys.version_info < (3, 8))' 2>/dev/null; then
+            python=$candidate
+            break
+        fi
+    done
+    if [ -z "$python" ]; then
+        echo "pre-commit: Python 3.8+ is needed to build articles" >&2
+        exit 1
+    fi
+    "$python" scripts/build_articles.py --staged
+    git add -A -- article
+fi
+
 assets=$(git ls-files -- '*.css' '*.js')
 pages=$(git ls-files -- '*.html')
 [ -z "$assets" ] || [ -z "$pages" ] && exit 0
