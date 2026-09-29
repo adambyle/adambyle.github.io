@@ -639,18 +639,18 @@ h3.entry-title {
 
 .prose {
     margin-top: 44px;
-    font-family: var(--font-serif);
-    font-variation-settings: "SOFT" 100;
-    font-size: 1.16rem;
-    line-height: 1.75;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 .prose > * + * {
-    margin-top: 1.1em;
+    margin-top: 1.15em;
 }
 
-/* The opening line reads as a lead-in */
+/* The opening line reads as a lead-in, in the serif like the homepage intro */
 .prose > p:first-child {
+    font-family: var(--font-serif);
+    font-variation-settings: "SOFT" 100;
     font-size: 1.4rem;
     line-height: 1.55;
     color: var(--sage-800);
@@ -659,6 +659,8 @@ h3.entry-title {
 .prose h2,
 .prose h3,
 .prose h4 {
+    font-family: var(--font-serif);
+    font-variation-settings: "SOFT" 100;
     margin-top: 2.2em;
     font-weight: 600;
     color: var(--sage-800);
@@ -826,7 +828,7 @@ h3.entry-title {
     }
 
     .prose {
-        font-size: 1.08rem;
+        font-size: 1.04rem;
     }
 
     .prose > p:first-child {
