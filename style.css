@@ -15,6 +15,12 @@
     --ink: #2a3531;
     --ink-soft: #56645f;
 
+    /* Snapshot frames on the interest panels */
+    --photo-frame: #fff;
+    --photo-shadow: rgba(52, 84, 75, 0.18);
+
+    color-scheme: light;
+
     --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
     --font-sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
 
@@ -26,6 +32,56 @@
     --icon-mail: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='4' width='20' height='16' rx='2'/%3E%3Cpath d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/%3E%3C/svg%3E");
     --icon-arrow-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E");
     --icon-arrow-down: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14'/%3E%3Cpath d='m19 12-7 7-7-7'/%3E%3C/svg%3E");
+}
+
+/* ---------- Dark theme ---------- */
+
+/* Chosen with the toggle (theme.js sets data-theme on <html>)... */
+:root[data-theme="dark"] {
+    /* Deep green-black paper; the sage scale runs the other way so that
+       "50" is still the subtlest tint and "800" the strongest accent. */
+    --paper: #151b19;
+    --paper-raised: #1b2320;
+
+    --sage-50: #1f2926;
+    --sage-100: #28342f;
+    --sage-200: #394a43;
+    --sage-400: #6d9384;
+    --sage-600: #9bc3b3;
+    --sage-800: #c5ded3;
+
+    --ink: #e2e8e4;
+    --ink-soft: #a6b3ad;
+
+    --photo-frame: #dfe6e2;
+    --photo-shadow: rgba(0, 0, 0, 0.45);
+
+    color-scheme: dark;
+}
+
+/* ...or the system setting when JavaScript is unavailable. */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        /* Deep green-black paper; the sage scale runs the other way so that
+           "50" is still the subtlest tint and "800" the strongest accent. */
+        --paper: #151b19;
+        --paper-raised: #1b2320;
+
+        --sage-50: #1f2926;
+        --sage-100: #28342f;
+        --sage-200: #394a43;
+        --sage-400: #6d9384;
+        --sage-600: #9bc3b3;
+        --sage-800: #c5ded3;
+
+        --ink: #e2e8e4;
+        --ink-soft: #a6b3ad;
+
+        --photo-frame: #dfe6e2;
+        --photo-shadow: rgba(0, 0, 0, 0.45);
+
+        color-scheme: dark;
+    }
 }
 
 *,
@@ -229,9 +285,9 @@ p {
     height: 96px;
     margin: 0 0 -44px -8px;
     object-fit: cover;
-    border: 5px solid #fff;
+    border: 5px solid var(--photo-frame);
     border-radius: 6px;
-    box-shadow: 0 6px 16px rgba(52, 84, 75, 0.18);
+    box-shadow: 0 6px 16px var(--photo-shadow);
     transform: rotate(-5deg);
     transition: transform 0.25s ease;
 }
@@ -611,6 +667,52 @@ h3.entry-title {
 .site-nav a:hover {
     text-decoration: underline;
     text-decoration-color: var(--sage-400);
+}
+
+.theme-toggle {
+    display: grid;
+    place-items: center;
+    align-self: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid var(--sage-200);
+    border-radius: 50%;
+    background: none;
+    color: var(--sage-600);
+    cursor: pointer;
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.theme-toggle[hidden] {
+    display: none;
+}
+
+.theme-toggle:hover {
+    background: var(--sage-100);
+    color: var(--sage-800);
+}
+
+.theme-toggle svg {
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Show the mode you'd switch to */
+.theme-toggle .icon-sun,
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+    display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+    display: block;
 }
 
 .site-nav-home {
